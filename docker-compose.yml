@@ -1,0 +1,18 @@
+# docker-compose.yml
+services:
+  postgres:
+    image: postgres:17
+    container_name: blog-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lvcky
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: blog
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./migrations/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+
+volumes:
+  postgres_data:
