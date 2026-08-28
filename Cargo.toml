@@ -9,3 +9,4 @@ tokio = {version = "1", features = ["full"]}
 serde = {version ="1.0", features = ["derive"]}
 sqlx = {version ="0.8", features =["postgres","runtime-tokio","macros"]}
 dotenvy = "0.15.7"
+axum-template = "3.0.0"
